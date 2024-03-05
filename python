@@ -1,0 +1,90 @@
+
+poem = """Twinkle, twinkle, little star,
+                How I wonder what you are!
+                      Up above the world so high,
+                      Like a diamond in the sky.
+          Twinkle, twinkle, little star,
+                How I wonder what you are"""
+
+print(poem)
+
+
+import math
+
+
+try:
+    radius = float(input("Введіть радіус кола: "))
+except ValueError:
+    print("Будь ласка, введіть коректне число для радіусу.")
+    exit()
+
+
+area = math.pi * radius**2
+
+
+print(f"Площа кола з радіусом {radius} одиниць: {area:.2f}")
+
+
+color_list = ["Red", "Green", "White", "Black"]
+
+
+print("Перший колір:", color_list[0])
+print("Останній колір:", color_list[-1])
+
+
+
+n = 5
+
+result = n + int(str(n) * 2) + int(str(n) * 3)
+
+print(f"Результат обчислення {n} + {n}{n} + {n}{n}{n} дорівнює {result}")
+
+
+numbers = [386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345, 399, 162, 
+           758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217, 815, 67, 104, 58, 512, 
+           24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717, 958, 743, 527]
+
+for number in numbers:
+    if number % 2 == 0:
+        print(number)
+
+    if number == 237:
+        print()
+        break
+
+
+def check_sequence(input_string):
+    return all(input_string[i] == input_string[i-1] and input_string[i:i*2] == '1'*i for i in range(1, len(input_string)))
+
+sequence1 = "01010101"
+result1 = check_sequence(sequence1)
+print(f"Послідовність: {sequence1}\nРезультат: {result1}")
+
+sequence2 = "00011100011"
+result2 = check_sequence(sequence2)
+print(f"Послідовність: {sequence2}\nРезультат: {result2}")
+
+
+
+
+def display_even_numbers(n, m):
+    for i in range(-n, n+1, m):
+        if i % 2 == 0:
+            print(i)
+
+student_number = int(input("Введіть порядковий номер студента у журналі: "))
+n = 10 
+display_even_numbers(n, student_number)
+
+
+import math
+
+def count_combinations(m):
+    n = 25 
+    combinations = math.factorial(n) / math.factorial(n - m)
+    return combinations
+
+student_number = int(input("Введіть порядковий номер студента у журналі: "))
+result = count_combinations(student_number)
+print(f"Кількість можливих комбінацій для пароля з {student_number} комірок: {int(result)}")
+
